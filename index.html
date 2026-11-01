@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="富田美菜の個人ポートフォリオ">
+<title>Mina's Little World 🌷</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Nunito:wght@400;600;700;800&display=swap');
+:root{--pink:#ffdce8;--lav:#e9e2ff;--yellow:#fff2b8;--mint:#dff5e8;--ink:#514b5d;--paper:#fffdf9;--accent:#a58bd4}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Nunito','Klee One',sans-serif;line-height:1.7}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#c8b6e8 1px,transparent 1px);background-size:18px 18px;z-index:-1}
+header{position:sticky;top:0;z-index:10;background:#fffdf9eF;backdrop-filter:blur(12px);border-bottom:2px dashed #eadcf2}
+.nav{max-width:1100px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-family:'Klee One',cursive;font-weight:600;font-size:1.15rem;color:#8b75b6;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:18px;align-items:center}nav a{color:inherit;text-decoration:none;font-size:.9rem;font-weight:800}nav a:hover{color:#a58bd4}
+.langs{display:flex;gap:5px}.lang{border:1px solid #d8c9ec;background:white;border-radius:20px;padding:5px 10px;cursor:pointer;color:var(--ink);font-weight:800;font-size:.78rem}.lang.active{background:#c9b8e8;color:white;border-color:#c9b8e8}
+main{max-width:1100px;margin:auto;padding:28px 22px 70px}
+.hero{min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding:35px 4%}
+.kicker{display:inline-block;background:var(--yellow);padding:5px 14px;border-radius:20px;font-size:.85rem;font-weight:800;transform:rotate(-2deg)}
+h1,h2,h3{font-family:'Klee One',cursive;line-height:1.25}
+h1{font-size:clamp(2.6rem,6vw,4.7rem);margin:18px 0 12px;color:#78639f}
+h1 .scribble{color:#e58baa;text-decoration:underline wavy #e9abc2;text-underline-offset:8px}
+.hero p{font-size:1.12rem;max-width:480px}
+.hero-art{position:relative;text-align:center}
+.photo-frame{background:white;padding:12px 12px 35px;border-radius:20px;box-shadow:0 12px 0 #eadcf2,0 18px 35px #d8c9ec66;transform:rotate(3deg);max-width:360px;margin:auto}
+.photo-frame img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}
+.sticker{position:absolute;font-size:2.4rem;animation:float 3s ease-in-out infinite}.s1{top:0;left:3%}.s2{right:0;bottom:4%}.s3{left:4%;bottom:0;font-size:1.8rem}
+@keyframes float{50%{transform:translateY(-8px) rotate(8deg)}}
+.section{padding:48px 0;scroll-margin-top:85px}
+.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-size:2.2rem;color:#78639f;margin:0}.section-title p{margin:5px 0;color:#9a8ca9}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:2px solid #f0e8f6;border-radius:24px;padding:24px;box-shadow:5px 6px 0 #f4eaf5;transition:.2s}
+.card:hover{transform:translateY(-4px) rotate(-.5deg);box-shadow:7px 10px 0 #f4eaf5}
+.card h3{font-size:1.25rem;margin:8px 0;color:#8b75b6}.emoji{font-size:1.8rem}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:stretch}
+.about-photo{background:var(--pink);border-radius:26px;padding:16px;display:flex;align-items:center}
+.about-photo img{width:100%;border-radius:18px}
+.about-copy{background:#fff;border:2px dashed #e7d8f0;border-radius:26px;padding:28px}
+.tag{display:inline-block;background:var(--mint);border-radius:20px;padding:4px 12px;margin:4px;font-size:.85rem;font-weight:800}
+.entp{display:flex;gap:15px;align-items:center;background:var(--lav);border-radius:18px;padding:14px;margin-top:16px}
+.entp-icon{flex:0 0 66px;height:66px;border-radius:20px;background:#b7a5df;color:white;display:grid;place-items:center;font-weight:900;font-size:1.1rem;transform:rotate(-4deg);border:3px solid white;outline:2px dashed #b7a5df}
+.entp p{margin:3px 0;font-size:.92rem}
+.skill-card{background:linear-gradient(140deg,#fff,#fff9fd)}
+.skill-line{height:10px;background:#f1eaf5;border-radius:20px;overflow:hidden;margin-top:12px}.skill-line span{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,#c7b8ec,#f3b9d0);border-radius:20px}
+.club{background:var(--yellow);border-radius:24px;padding:25px;text-align:center;margin-top:22px}
+.club h3{font-size:1.5rem;margin:5px}
+.club a,.contact-link{color:#78639f;font-weight:900;text-decoration:none;border-bottom:2px dashed #b6a3d9}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact-card{background:white;border-radius:22px;border:2px solid #eee4f4;padding:22px;text-align:center;text-decoration:none;color:inherit;overflow-wrap:anywhere}
+.contact-card .emoji{display:block}.contact-card strong{display:block;color:#8b75b6;margin:5px}
+footer{text-align:center;padding:25px;border-top:2px dashed #eadcf2;color:#9a8ca9;font-family:'Klee One',cursive}
+.flower-divider{text-align:center;color:#e7a4bf;letter-spacing:12px;font-size:1.2rem}
+@media(max-width:760px){.nav{flex-wrap:wrap;justify-content:center}.nav nav{order:3;width:100%;justify-content:center;gap:13px}.hero{grid-template-columns:1fr;text-align:center;padding:30px 0}.hero p{margin:0 auto}.hero-art{margin:18px auto 0;width:min(100%,360px)}.cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.about-photo{max-width:380px;margin:auto}.contact-grid{grid-template-columns:1fr}.section{padding:35px 0}main{padding:18px 16px 50px}h1{font-size:3rem}}
+@media(min-width:761px) and (max-width:950px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#home">✿ Mina's Little World</a>
+<nav><a href="#about" data-i18n="navAbout">私について</a><a href="#skills" data-i18n="navSkills">スキル・目標</a><a href="#contact" data-i18n="navContact">連絡先</a></nav>
+<div class="langs" aria-label="Language selector"><button class="lang active" data-lang="ja">日本語</button><button class="lang" data-lang="en">EN</button><button class="lang" data-lang="zh">繁體</button></div>
+</div></header>
+<main>
+<section class="hero" id="home">
+<div><span class="kicker" data-i18n="kicker">Hello! Welcome to my page 🌼</span>
+<h1><span data-i18n="hello">こんにちは、</span><br><span class="scribble">Mina</span><span data-i18n="desu">です！</span></h1>
+<p data-i18n="intro">最強プラス思考が取り柄の大学生 ✨ 好奇心いっぱい、好きなことを楽しみながら成長中！</p>
+<div><span class="tag">ENTP-A</span><span class="tag" data-i18n="majorTag">Information Management</span></div></div>
+<div class="hero-art"><span class="sticker s1">🌷</span><div class="photo-frame"><img src="assets/mina.png" alt="Mina's Animal Crossing style avatar"></div><span class="sticker s2">✨</span><span class="sticker s3">🌼</span></div>
+</section>
+<div class="flower-divider">✿ ✿ ✿</div>
+<section class="section" id="about">
+<div class="section-title"><h2 data-i18n="aboutTitle">About me 🌸</h2><p data-i18n="aboutSub">ちょっとだけ、私のこと。</p></div>
+<div class="about-grid"><div class="about-photo"><img src="assets/mina.png" alt="富田美菜のプロフィール画像"></div>
+<div class="about-copy"><h3 data-i18n="profileTitle">プロフィール</h3>
+<p><strong data-i18n="nameLabel">名前：</strong>富田美菜 <span>(Tomita Mina)</span></p>
+<p><strong data-i18n="majorLabel">学科：</strong><span data-i18n="major">開南大學 資訊管理系</span></p>
+<p><strong data-i18n="personalityLabel">ひとこと：</strong><span data-i18n="personality">最強プラス思考もってます ✨</span></p>
+<p><strong data-i18n="hobbyLabel">好きなこと：</strong><span data-i18n="hobby">寝ること、食べること 🍰</span></p>
+<div class="entp"><div class="entp-icon">ENTP<br><small> A </small></div><div><strong data-i18n="entpTitle">ENTP-A｜討論者タイプ</strong><p data-i18n="entpDesc">好奇心旺盛でアイデア豊富。新しいことに挑戦するのが好きで、柔軟な発想と前向きさが魅力です。</p></div></div>
+</div></div></section>
+<section class="section" id="skills"><div class="section-title"><h2 data-i18n="skillsTitle">Skills & Goals 🎨</h2><p data-i18n="skillsSub">少しずつ学んで、形にしていく。</p></div>
+<div class="cards">
+<div class="card skill-card"><span class="emoji">💻</span><h3 data-i18n="skill1">情報管理</h3><p data-i18n="skill1desc">大学の授業を通して、IT・情報管理の基礎を学んでいます。</p><div class="skill-line"><span style="--w:48%"></span></div></div>
+<div class="card skill-card"><span class="emoji">🌱</span><h3 data-i18n="skill2">これから学びたいこと</h3><p data-i18n="skill2desc">HTML・CSS・JavaScript、そしてセキュリティの知識を深めたい！</p><div class="skill-line"><span style="--w:35%"></span></div></div>
+<div class="card skill-card"><span class="emoji">🪄</span><h3 data-i18n="goalTitle">My Learning Goal</h3><p data-i18n="goalDesc">自分のアイデアを、自分の手でオリジナルの作品にできるようになること。</p><div class="skill-line"><span style="--w:60%"></span></div></div>
+</div>
+<div class="club"><span class="emoji">🌷📣🌷</span><h3 data-i18n="clubTitle">開南大學 日本學生會</h3><p data-i18n="clubDesc">日本学生会の会長として活動しています！イベントや活動の様子をSNSでチェックしてね。</p><a href="https://www.instagram.com/knu_jp_students/?rpxt=MTl4ZTJ4d291amo4YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" data-i18n="clubLink">日本学生会 Instagram を見る →</a></div>
+</section>
+<section class="section" id="contact"><div class="section-title"><h2 data-i18n="contactTitle">Let's connect 💌</h2><p data-i18n="contactSub">気軽に連絡してください！</p></div>
+<div class="contact-grid">
+<a class="contact-card" href="mailto:b11340039@gapps.knu.edu.tw"><span class="emoji">📧</span><strong>Email</strong><span>b11340039@gapps.knu.edu.tw</span></a>
+<a class="contact-card" href="https://line.me/ti/p/pyF6FBKUWF" target="_blank" rel="noopener"><span class="emoji">💬</span><strong>LINE</strong><span data-i18n="lineName">富田美菜｜メッセージはこちら</span></a>
+<a class="contact-card" href="https://www.instagram.com/3na.15s/?dlrf=MWc4bnVlOHgyYXdicw%3D%3D&utm_source=qr" target="_blank" rel="noopener"><span class="emoji">📷</span><strong>Instagram</strong><span>@3na.15s</span></a>
+</div></section>
+</main>
+<footer data-i18n="footer">Made with love & a little bit of ✨ by Mina © 2026</footer>
+<script>
+const translations={
+ja:{navAbout:"私について",navSkills:"スキル・目標",navContact:"連絡先",kicker:"Hello! Welcome to my page 🌼",hello:"こんにちは、",desu:"です！",intro:"最強プラス思考が取り柄の大学生 ✨ 好奇心いっぱい、好きなことを楽しみながら成長中！",majorTag:"情報管理学科",aboutTitle:"About me 🌸",aboutSub:"ちょっとだけ、私のこと。",profileTitle:"プロフィール",nameLabel:"名前：",majorLabel:"学科：",major:"開南大學 資訊管理系",personalityLabel:"ひとこと：",personality:"最強プラス思考もってます ✨",hobbyLabel:"好きなこと：",hobby:"寝ること、食べること 🍰",entpTitle:"ENTP-A｜討論者タイプ",entpDesc:"好奇心旺盛でアイデア豊富。新しいことに挑戦するのが好きで、柔軟な発想と前向きさが魅力です。",skillsTitle:"Skills & Goals 🎨",skillsSub:"少しずつ学んで、形にしていく。",skill1:"情報管理",skill1desc:"大学の授業を通して、IT・情報管理の基礎を学んでいます。",skill2:"これから学びたいこと",skill2desc:"HTML・CSS・JavaScript、そしてセキュリティの知識を深めたい！",goalTitle:"学習目標",goalDesc:"自分のアイデアを、自分の手でオリジナルの作品にできるようになること。",clubTitle:"開南大學 日本學生會",clubDesc:"日本学生会の会長として活動しています！イベントや活動の様子をSNSでチェックしてね。",clubLink:"日本学生会 Instagram を見る →",contactTitle:"Let's connect 💌",contactSub:"気軽に連絡してください！",lineName:"富田美菜｜メッセージはこちら",footer:"Made with love & a little bit of ✨ by Mina © 2026"},
+en:{navAbout:"About Me",navSkills:"Skills & Goals",navContact:"Contact",kicker:"Hello! Welcome to my page 🌼",hello:"Hi, I'm",desu:"!",intro:"A university student with an unstoppable positive mindset ✨ Curious, creative, and always growing!",majorTag:"Information Management",aboutTitle:"About Me 🌸",aboutSub:"A little introduction to me.",profileTitle:"Profile",nameLabel:"Name: ",majorLabel:"Major: ",major:"Information Management, Kainan University",personalityLabel:"One-liner: ",personality:"Powered by maximum positivity ✨",hobbyLabel:"Hobbies: ",hobby:"Sleeping and eating 🍰",entpTitle:"ENTP-A | The Debater",entpDesc:"Curious and full of ideas. I enjoy trying new things, thinking flexibly, and bringing a positive attitude to challenges.",skillsTitle:"Skills & Goals 🎨",skillsSub:"Learning little by little and turning ideas into reality.",skill1:"Information Management",skill1desc:"Learning the fundamentals of IT and information management through university courses.",skill2:"What I want to learn",skill2desc:"I want to deepen my knowledge of HTML, CSS, JavaScript, and cybersecurity!",goalTitle:"Learning Goal",goalDesc:"To turn my own ideas into original creations with my own hands.",clubTitle:"Kainan University Japanese Student Association",clubDesc:"I'm active as the president of the Japanese Student Association! Check out our events and activities on Instagram.",clubLink:"Visit our Instagram →",contactTitle:"Let's connect 💌",contactSub:"Feel free to reach out!",lineName:"Tomita Mina | Send me a message",footer:"Made with love & a little bit of ✨ by Mina © 2026"},
+zh:{navAbout:"關於我",navSkills:"技能與學習目標",navContact:"聯絡方式",kicker:"Hello! Welcome to my page 🌼",hello:"嗨，我是",desu:"！",intro:"擁有最強正向思考的大學生 ✨ 充滿好奇心，享受喜歡的事物並持續成長！",majorTag:"資訊管理系",aboutTitle:"關於我 🌸",aboutSub:"來認識一下我吧！",profileTitle:"個人資料",nameLabel:"姓名：",majorLabel:"科系：",major:"開南大學 資訊管理系",personalityLabel:"一句話介紹：",personality:"擁有最強正向思考 ✨",hobbyLabel:"興趣：",hobby:"睡覺、吃東西 🍰",entpTitle:"ENTP-A｜辯論家型",entpDesc:"充滿好奇心與創意，喜歡挑戰新事物。擅長靈活思考，並以積極正向的態度面對挑戰。",skillsTitle:"技能與學習目標 🎨",skillsSub:"一步一步學習，讓想法成為作品。",skill1:"資訊管理",skill1desc:"透過大學課程學習 IT 與資訊管理的基礎知識。",skill2:"接下來想學習",skill2desc:"希望深入學習 HTML、CSS、JavaScript，以及資訊安全！",goalTitle:"學習目標",goalDesc:"希望能靠自己的能力，將獨特的想法製作成原創作品。",clubTitle:"開南大學 日本學生會",clubDesc:"目前擔任日本學生會會長！歡迎到 Instagram 查看活動與社團日常。",clubLink:"前往日本學生會 Instagram →",contactTitle:"聯絡我 💌",contactSub:"歡迎隨時與我聯絡！",lineName:"富田美菜｜點此傳訊息",footer:"Made with love & a little bit of ✨ by Mina © 2026"}
+};
+function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(translations[lang][key])el.textContent=translations[lang][key]});document.querySelectorAll(".lang").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang))}
+document.querySelectorAll(".lang").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
+</script>
+</body></html>
